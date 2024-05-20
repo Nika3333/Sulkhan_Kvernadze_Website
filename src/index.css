@@ -1,0 +1,127 @@
+/* Global Styling */
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    :root {
+        --main-color: #DEB887;
+        --main-color-lighter: #f7efe3;
+        --secondary-color: #1a4277;
+        --theered--color: #87adde;
+        --text-color: #412b0e;
+        --transition: 150ms;
+    }
+
+    body {
+        font-family: "Inter", "sans-serif";
+        margin: 0;
+        min-height: 100vh;
+        min-height: 100svh;
+        color: var(--text-color);
+        background-color: var(--main-color-lighter);
+
+        /* NavBar height to stop overlapping */
+        padding-top: 4rem; 
+    }
+
+/* For 768px screen size */
+    @media screen and (max-width: 768px) {
+        body {
+            padding-top: 3rem;  
+        }
+    }
+
+/* ScrollBar */
+    body::-webkit-scrollbar {
+        width: 7px;
+    }
+    
+    body::-webkit-scrollbar-track {
+        background: rgb(200, 200, 200);
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: rgb(130, 130, 130);    
+        border-radius: 50px;       
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+        background-color: rgb(100, 100, 100);    
+    }
+
+/* Actual Code */
+    .slider-btn {
+        position: absolute;
+        top: 50%;
+        background-color: var(--main-color);
+        border-radius: 50%;
+        height: 3.5rem;
+        width: 3.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-inline: 2rem;
+        transition: var(--transition);
+        transform: translateY(-50%);
+        color: var(--text-color);
+        
+        &:hover,
+        &:focus-within {
+            scale: 1.1;
+        }
+    }
+
+/* For large 1024px screen size */
+    @media screen and (max-width: 1024px) {
+        .slider-btn {
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+    }
+
+/* For Small 640px screen size */
+    @media screen and (max-width: 640px) {
+        .slider-btn {
+            height: 2rem;
+            width: 2rem;
+            margin-inline: 0.725rem;
+        }
+    }
+
+/* Custome <li> list style */
+    .ul-list li::before {
+        content: "✔";
+        color: var(--main-color);
+        margin-right: 5px;
+    }
+
+    .ul-list {
+        background-color: var(--main-color-lighter);
+        box-shadow: 2px 4px 10px #412b0e50;
+        width: 300px;
+        border-radius: 8px;
+        padding: 15px;
+    }
+
+/* For Small 640px screen size */
+    @media screen and (max-width: 640px) {
+        .ul-list {
+            width: 250px;
+        }
+    }
+
+/* Background image for footer */
+    .bg-image-class {
+        background-image: url("../public/images/Skyscraper_Background.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
