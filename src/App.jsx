@@ -7,7 +7,7 @@ export default function App() {
   return (
     <>
       <NavBar/>
-      <NavRoutes/>
+      <Home/>
       <Footer/>
     </>
   )
